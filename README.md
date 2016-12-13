@@ -9,7 +9,7 @@ Création d’une vidéothèque en ligne permettant d’ajouter des films et de 
 ![alt tag](https://raw.githubusercontent.com/rafa10/videotheque/master/show_film.jpg)
 
 # Recherche par titre
-![alt tag](https://raw.githubusercontent.com/rafa10/videotheque/master/search_by_title.jpg)
+![alt tag](https://raw.githubusercontent.com/rafa10/videotheque/master/search_by_title.png)
 
 # Recherche par categories
 ![alt tag](https://raw.githubusercontent.com/rafa10/videotheque/master/search_by_categories.jpg)
@@ -24,4 +24,4 @@ Création d’une vidéothèque en ligne permettant d’ajouter des films et de 
 ![alt tag](https://raw.githubusercontent.com/rafa10/videotheque/master/mail_add.jpg)
 
 # Notification (Mail Supprimer)
-![alt tag](https://raw.githubusercontent.com/rafa10/videotheque/master/mail_delete.jpg)
+![alt tag](https://raw.githubusercontent.com/rafa10/videotheque/master/mail_delete.png)
