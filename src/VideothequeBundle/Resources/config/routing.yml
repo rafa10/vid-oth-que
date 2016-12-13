@@ -1,0 +1,30 @@
+videotheque_homepage:
+    path:     /
+    defaults: { _controller: VideothequeBundle:Home:index }
+
+videotheque_movies_by_categorie:
+    path:     /categorie/{cat}
+    defaults: { _controller: VideothequeBundle:Home:showByCategories }
+
+videotheque_search_movies:
+    path:     /movies
+    defaults: { _controller: VideothequeBundle:Home:searchMovies }       
+# ROUTING MOVIES =========================================
+# ========================================================
+videotheque_movies_create:
+    path:     /movies/create
+    defaults: { _controller: VideothequeBundle:Movies:create }
+
+videotheque_movies_update:
+    path:     /movies/update/{id}
+    defaults: { _controller: VideothequeBundle:Movies:update }
+
+videotheque_movies_destroy:
+    path:     /movies/destroy/{id}
+    defaults: { _controller: VideothequeBundle:Movies:destroy }
+
+videotheque_movies_show:
+    path:     /{cat}/{title}_{id}
+    defaults: { _controller: VideothequeBundle:Movies:show }
+
+ 

@@ -1,0 +1,81 @@
+{% extends "VideothequeBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} | modifier film{% endblock %}
+
+{% block body %}
+
+	<div class="row ">
+          <div class="col s12 m8 offset-m2">
+              <div class="card-panel">
+                  <h5 class="header2 upper center">Crée un nouveau film</h5>
+                  <div class="row">
+                    <div class="col s12 m10 offset-m1"> 
+                      {{ form_start(form) }}
+
+                      <div class="row"><!-- categories-->
+                          <div class="input-field col s12">
+                              {{ form_widget(form.categories) }}
+                              {{ form_label(form.categories, 'Catégories') }}
+                              <span class="help-block red-text">
+                                  <strong>{{ form_errors(form.categories) }}</strong>
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="row"><!-- title-->
+                          <div class="input-field col s12">
+                              {{ form_widget(form.title) }}
+                              {{ form_label(form.title, 'Titre') }}
+                              <span class="help-block red-text">
+                                  <strong>{{ form_errors(form.title) }}</strong>
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="row"><!-- description-->
+                          <div class="input-field col s12">
+                              {{ form_widget(form.description) }}
+                              {{ form_label(form.description, 'Description') }}
+                              <span class="help-block red-text">
+                                  <strong>{{ form_errors(form.description) }}</strong>
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="row"><!-- image-->
+                          <div class="input-field col s12">
+                              {{ form_widget(form.image) }}
+                              {{ form_label(form.image, 'Photo') }}
+                              <span class="help-block red-text">
+                                  <strong>{{ form_errors(form.image) }}</strong>
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="row"><!-- date-->
+                          <div class="input-field col s12">
+                              {{ form_widget(form.created_at) }}
+                              {{ form_label(form.created_at, 'Date de sortie') }}
+                              <span class="help-block red-text">
+                                  <strong>{{ form_errors(form.created_at) }}</strong>
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="row"><!--button-->
+                          <div class="input-field col s12">
+                              <button class="btn cyan waves-effect waves-light blue-grey right" type="submit" name="action">Submit
+                                  <i class="mdi-content-send right"></i>
+                              </button>
+                          </div>
+                      </div>
+
+                      {{ form_end(form) }}
+                    </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> {% block title %} Vidéothéque {% endblock %} </title>
+    <!-- Import font icon font-awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--Import Google Icon Font-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- Import CSS file -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/main.css') }}">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+<nav class="header">
+    <div class="nav-wrapper grey darken-4">
+        <a href="#" class="brand-logo pink-text  text-darken-5">&nbsp;Vidéothéque</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="yellow-text " href="{{ path('videotheque_homepage') }}">Chercher un film</a></li>
+            <li><a class="black-text waves-effect waves-light btn yellow" href="{{ path('videotheque_movies_create') }}">Création d’un film</a></li>
+            <li><a class="dropdown-button yellow-text " href="#!" data-activates="dropdown1">Catégories <i class="material-icons right">arrow_drop_down</i></a></li>
+                <!-- Dropdown Structure -->
+                <ul id="dropdown1" class="dropdown-content">
+                {% for item in categories %}    
+                    <li><a class="yellow-text" href="{{ path('videotheque_movies_by_categorie',{'cat': item.name}) }}"> {{ item.name }} </a></li>
+                {% endfor %}    
+                </ul>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="container"><!-- the block content -->
+    <br><br><br>
+    {% block body %} {% endblock %}
+</div>
+
+<footer class="page-footer grey lighten-2">
+    <div class="footer-copyright grey lighten-2">
+        <div class="container grey-text">
+            © {{ "now"|date('Y') }} Copyright - BELKHIRIA NAJIB - Vidéothéque - SYMFONY
+        </div>
+    </div>
+</footer>
+<!-- CDN jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--link file js personnel -->
+<script src="{{asset('public/js/main.js')}}"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+</body>
+</html>
+
+
+

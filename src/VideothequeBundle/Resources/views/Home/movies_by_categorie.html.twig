@@ -1,0 +1,38 @@
+{% extends "VideothequeBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} {% endblock %}
+
+{% block body %}
+
+	<h4 class="flow-text"> <b>{{ name }}</b> ({{ pagination|length }})</h4>
+	
+	<div class="row">
+		{% for item in pagination %}
+			<div class="col s12 m4">
+		    <div class="card horizontal">
+		      <div class="card-image c-img">
+		        <img src="{{ item.image }} ">
+		      </div>
+		      <div class="card-stacked">
+		        <div class="card-content">
+		          <span class="card-title activator grey-text text-darken-4">{{ item.title }}</span>
+			      <p><a href="#">{{item.categories.name}}</a></p>
+		        </div>
+		        <div class="card-action">
+		          <a href="{{ path('videotheque_movies_show', {'cat': item.categories.name, 'title': item.title , 'id': item.id}) }}">Voir plus</a>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		{% endfor %}
+	</div>
+
+	<div class="row"><!-- PAGINATION PAGE BLOG  -->
+        <div class="col s12 center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+      </div>
+
+
+{% endblock  %}
+
